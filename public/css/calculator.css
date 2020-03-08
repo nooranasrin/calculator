@@ -24,8 +24,13 @@ body {
 }
 
 .inputBox {
+  cursor: pointer;
   display: flex;
   height: 70px;
+}
+
+.inputButton:active {
+  background-image: radial-gradient(rgb(206, 203, 203), rgb(196, 189, 189));
 }
 
 .inputButton {
@@ -54,9 +59,14 @@ body {
   text-align: center;
   font-size: 30px;
   width: 150px;
+  cursor: pointer;
   background-color: rgb(224, 223, 223);
   border-top: 1px solid #777;
   border-right: 1px solid #777;
   font-weight: lighter;
   line-height: 80px;
+}
+
+.zero:active {
+  background-image: radial-gradient(rgb(206, 203, 203), rgb(196, 189, 189));
 }
