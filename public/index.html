@@ -10,47 +10,75 @@
     <div class="calculator">
       <div id="resultDisplay">0</div>
       <div class="inputBox">
-        <div class="inputButton" style=" background-color: rgb(196, 189, 189)">
-          C
+        <div
+          class="inputButton"
+          style=" background-color: rgb(196, 189, 189)"
+          onclick="clear()"
+        >
+          AC
         </div>
-        <div class="inputButton" style=" background-color: rgb(196, 189, 189)">
+        <div
+          class="inputButton"
+          style=" background-color: rgb(196, 189, 189)"
+          onclick="convertIntoOppositeNum()"
+        >
           ±
         </div>
-        <div class="inputButton" style=" background-color: rgb(196, 189, 189)">
+        <div
+          class="inputButton"
+          style=" background-color: rgb(196, 189, 189)"
+          onclick="getPercentage()"
+        >
           %
         </div>
-        <div class="inputButton actionButton">
+        <div
+          class="inputButton actionButton"
+          id="division"
+          onclick="performCalculation()"
+        >
           ÷
         </div>
       </div>
       <div class="inputBox">
-        <div class="inputButton">1</div>
-        <div class="inputButton">2</div>
-        <div class="inputButton">3</div>
-        <div class="inputButton actionButton">
+        <div class="inputButton" onclick="storeNumber()">7</div>
+        <div class="inputButton" onclick="storeNumber()">8</div>
+        <div class="inputButton" onclick="storeNumber()">9</div>
+        <div
+          class="inputButton actionButton"
+          id="multiplication"
+          onclick="performCalculation()"
+        >
           ×
         </div>
       </div>
       <div class="inputBox">
-        <div class="inputButton">4</div>
-        <div class="inputButton">5</div>
-        <div class="inputButton">6</div>
-        <div class="inputButton actionButton">
+        <div class="inputButton" onclick="storeNumber()">4</div>
+        <div class="inputButton" onclick="storeNumber()">5</div>
+        <div class="inputButton" onclick="storeNumber()">6</div>
+        <div
+          class="inputButton actionButton"
+          id="subtraction"
+          onclick="performCalculation()"
+        >
           -
         </div>
       </div>
       <div class="inputBox">
-        <div class="inputButton">7</div>
-        <div class="inputButton">8</div>
-        <div class="inputButton">9</div>
-        <div class="inputButton actionButton">
+        <div class="inputButton" onclick="storeNumber()">1</div>
+        <div class="inputButton" onclick="storeNumber()">2</div>
+        <div class="inputButton" onclick="storeNumber()">3</div>
+        <div
+          class="inputButton actionButton"
+          id="addition"
+          onclick="performCalculation()"
+        >
           +
         </div>
       </div>
       <div class="inputBox">
-        <div class="zero">0</div>
-        <div class="inputButton">.</div>
-        <div class="inputButton actionButton">
+        <div class="zero" onclick="storeNumber()">0</div>
+        <div class="inputButton" onclick="giveDecimalPoint()">.</div>
+        <div class="inputButton actionButton" onclick="showCalculationResult()">
           =
         </div>
       </div>
