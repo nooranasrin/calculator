@@ -13,7 +13,7 @@ const provideCalculator = function(req, res, next) {
 
 const saveNumber = function(req, res, next) {
   const { number } = req.body;
-  const result = req.calculator.saveNumber(+number);
+  const result = req.calculator.saveNumber(number);
   res.json({ result });
 };
 
