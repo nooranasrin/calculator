@@ -29,7 +29,8 @@ const performCalculation = function(req, res, next) {
 };
 
 const clearResult = function(req, res, next) {
-  return 0;
+  req.app.locals.calculator = new Calculator();
+  res.json({ result: 0 });
 };
 
 module.exports = {

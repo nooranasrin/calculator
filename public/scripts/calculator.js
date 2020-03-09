@@ -21,19 +21,12 @@ const sendGETRequest = function(url) {
     .then(showResult);
 };
 
-const storeNumber = function() {
-  const number = event.target.innerText;
-  sendPOSTRequest('/saveNumber', { number });
-};
+const clearCalculatorDisplay = () => sendGETRequest('/clearResult');
 
-const performCalculation = function() {
+const storeNumber = () =>
+  sendPOSTRequest('/saveNumber', { number: event.target.innerText });
+
+const performCalculation = () =>
   sendPOSTRequest('/saveOperator', { operator: event.target.innerText });
-};
 
-const showCalculationResult = function() {
-  sendGETRequest('/performCalculation');
-};
-
-const clear = function() {
-  sendGETRequest('/clearResult');
-};
+const showCalculationResult = () => sendGETRequest('/performCalculation');
