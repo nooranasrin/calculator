@@ -30,3 +30,8 @@ const performCalculation = () =>
   sendPOSTRequest('/saveOperator', { operator: event.target.innerText });
 
 const showCalculationResult = () => sendGETRequest('/performCalculation');
+
+const convertIntoOppositeNum = () => {
+  let number = +document.querySelector('#resultDisplay').innerText;
+  sendPOSTRequest('/convertIntoOppositeNum', { number });
+};

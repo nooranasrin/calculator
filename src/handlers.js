@@ -33,11 +33,18 @@ const clearResult = function(req, res, next) {
   res.json({ result: 0 });
 };
 
+const convertIntoOppositeNum = function(req, res, next) {
+  const { number } = req.body;
+  const result = req.calculator.convertIntoOppositeNum(number);
+  res.json({ result });
+};
+
 module.exports = {
   saveNumber,
   createCalculator,
   provideCalculator,
   saveOperator,
   performCalculation,
-  clearResult
+  clearResult,
+  convertIntoOppositeNum
 };

@@ -11,5 +11,6 @@ app.post('/saveNumber', handlers.saveNumber);
 app.post('/saveOperator', handlers.saveOperator);
 app.get('/performCalculation', handlers.performCalculation);
 app.get('/clearResult', handlers.clearResult);
+app.post('/convertIntoOppositeNum', handlers.convertIntoOppositeNum);
 
 module.exports = app;

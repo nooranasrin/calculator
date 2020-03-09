@@ -30,6 +30,10 @@ class Calculator {
     return this.firstNumber;
   }
 
+  convertIntoOppositeNum(number) {
+    return (this.firstNumber = `${-number}`);
+  }
+
   performCalculation() {
     const operations = { '+': add, '-': subtract, '×': multiply, '÷': divide };
     const operation = operations[this.operator];
