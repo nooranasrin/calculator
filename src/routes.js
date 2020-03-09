@@ -12,5 +12,6 @@ app.post('/saveOperator', handlers.saveOperator);
 app.get('/performCalculation', handlers.performCalculation);
 app.get('/clearResult', handlers.clearResult);
 app.post('/convertIntoOppositeNum', handlers.convertIntoOppositeNum);
+app.post('/percentage', handlers.getPercentage);
 
 module.exports = app;

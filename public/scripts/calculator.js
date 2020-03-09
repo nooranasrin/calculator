@@ -31,6 +31,11 @@ const performCalculation = () =>
 
 const showCalculationResult = () => sendGETRequest('/performCalculation');
 
+const getPercentage = function() {
+  let number = +document.querySelector('#resultDisplay').innerText;
+  sendPOSTRequest('/percentage', { number });
+};
+
 const convertIntoOppositeNum = () => {
   let number = +document.querySelector('#resultDisplay').innerText;
   sendPOSTRequest('/convertIntoOppositeNum', { number });

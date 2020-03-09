@@ -30,6 +30,10 @@ class Calculator {
     return this.firstNumber;
   }
 
+  getPercentage(number) {
+    return this.firstNumber / 100;
+  }
+
   convertIntoOppositeNum(number) {
     return (this.firstNumber = `${-number}`);
   }

@@ -39,6 +39,12 @@ const convertIntoOppositeNum = function(req, res, next) {
   res.json({ result });
 };
 
+const getPercentage = function(req, res, next) {
+  const { number } = req.body;
+  const result = req.calculator.getPercentage(number);
+  res.json({ result });
+};
+
 module.exports = {
   saveNumber,
   createCalculator,
@@ -46,5 +52,6 @@ module.exports = {
   saveOperator,
   performCalculation,
   clearResult,
-  convertIntoOppositeNum
+  convertIntoOppositeNum,
+  getPercentage
 };
