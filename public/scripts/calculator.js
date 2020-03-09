@@ -3,9 +3,9 @@ const showResult = function({ result }) {
   resultDisplay.innerText = result;
 };
 
-const sendRequest = function(method, url, data) {
+const sendPOSTRequest = function(url, data) {
   fetch(url, {
-    method,
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -15,11 +15,25 @@ const sendRequest = function(method, url, data) {
     .then(showResult);
 };
 
+const sendGETRequest = function(url) {
+  fetch(url, { method: 'GET' })
+    .then(response => response.json())
+    .then(showResult);
+};
+
 const storeNumber = function() {
   const number = event.target.innerText;
-  sendRequest('POST', '/saveNumber', { number });
+  sendPOSTRequest('/saveNumber', { number });
 };
 
 const performCalculation = function() {
-  sendRequest('POST', '/saveOperator', { operator: event.target.innerText });
+  sendPOSTRequest('/saveOperator', { operator: event.target.innerText });
+};
+
+const showCalculationResult = function() {
+  sendGETRequest('/performCalculation');
+};
+
+const clear = function() {
+  sendGETRequest('/clearResult');
 };

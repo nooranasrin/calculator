@@ -9,5 +9,7 @@ app.use(express.static('public'));
 app.use(handlers.provideCalculator);
 app.post('/saveNumber', handlers.saveNumber);
 app.post('/saveOperator', handlers.saveOperator);
+app.get('/performCalculation', handlers.performCalculation);
+app.get('/clearResult', handlers.clearResult);
 
 module.exports = app;

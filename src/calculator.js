@@ -1,3 +1,11 @@
+const add = (firstNumber, secondNumber) => firstNumber + secondNumber;
+
+const subtract = (firstNumber, secondNumber) => firstNumber - secondNumber;
+
+const multiply = (firstNumber, secondNumber) => firstNumber * secondNumber;
+
+const divide = (firstNumber, secondNumber) => firstNumber / secondNumber;
+
 class Calculator {
   constructor() {
     this.firstNumber = '';
@@ -17,8 +25,19 @@ class Calculator {
     if (this.operator) {
       this.lastOperator = this.operator;
     }
+
     this.operator = operator;
     return this.firstNumber;
+  }
+
+  performCalculation() {
+    const operations = { '+': add, '-': subtract, '×': multiply, '÷': divide };
+    const operation = operations[this.operator];
+    const result = operation(+this.firstNumber, +this.secondNumber);
+    this.operator = null;
+    this.secondNumber = '';
+    this.firstNumber = `${result}`;
+    return { result };
   }
 }
 

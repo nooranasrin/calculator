@@ -14,18 +14,29 @@ const provideCalculator = function(req, res, next) {
 const saveNumber = function(req, res, next) {
   const { number } = req.body;
   const result = req.calculator.saveNumber(+number);
-  res.send({ result });
+  res.json({ result });
 };
 
 const saveOperator = function(req, res, next) {
   const { operator } = req.body;
   const result = req.calculator.saveOperator(operator);
-  res.send({ result });
+  res.json({ result });
+};
+
+const performCalculation = function(req, res, next) {
+  const result = req.calculator.performCalculation();
+  res.json(result);
+};
+
+const clearResult = function(req, res, next) {
+  return 0;
 };
 
 module.exports = {
   saveNumber,
   createCalculator,
   provideCalculator,
-  saveOperator
+  saveOperator,
+  performCalculation,
+  clearResult
 };
