@@ -22,30 +22,34 @@ class Calculator {
   }
 
   saveOperator(operator) {
-    if (this.operator) {
-      this.lastOperator = this.operator;
+    if (this.lastOperator) {
+      this.firstNumber = this.performCalculation();
     }
-
+    this.lastOperator = this.operator ? this.operator : operator;
     this.operator = operator;
+    this.secondNumber = '';
     return this.firstNumber;
   }
 
+  updateNumber(number, calculationResult) {
+    return number === this.firstNumber
+      ? (this.firstNumber = calculationResult)
+      : (this.secondNumber = calculationResult);
+  }
+
   getPercentage(number) {
-    return this.firstNumber / 100;
+    const percentage = +number / 100;
+    return this.updateNumber(number, percentage);
   }
 
   convertIntoOppositeNum(number) {
-    return (this.firstNumber = `${-number}`);
+    return this.updateNumber(number, `${-number}`);
   }
 
   performCalculation() {
     const operations = { '+': add, '-': subtract, '×': multiply, '÷': divide };
     const operation = operations[this.operator];
-    const result = operation(+this.firstNumber, +this.secondNumber);
-    this.operator = null;
-    this.secondNumber = '';
-    this.firstNumber = '';
-    return { result };
+    return operation(+this.firstNumber, +this.secondNumber);
   }
 }
 

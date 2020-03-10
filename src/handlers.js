@@ -25,7 +25,8 @@ const saveOperator = function(req, res, next) {
 
 const performCalculation = function(req, res, next) {
   const result = req.calculator.performCalculation();
-  res.json(result);
+  req.app.locals.calculator = new Calculator();
+  res.json({ result });
 };
 
 const clearResult = function(req, res, next) {
