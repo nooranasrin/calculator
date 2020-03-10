@@ -26,17 +26,20 @@ const clearCalculatorDisplay = () => sendGETRequest('/clearResult');
 const storeNumber = () =>
   sendPOSTRequest('/saveNumber', { number: event.target.innerText });
 
-const performCalculation = () =>
-  sendPOSTRequest('/saveOperator', { operator: event.target.innerText });
+const performCalculation = () => {
+  const operator = event.target.innerText;
+  const number = +document.querySelector('#resultDisplay').innerText;
+  sendPOSTRequest('/saveOperator', { operator, number });
+};
 
 const showCalculationResult = () => sendGETRequest('/performCalculation');
 
 const getPercentage = function() {
-  let number = +document.querySelector('#resultDisplay').innerText;
+  const number = +document.querySelector('#resultDisplay').innerText;
   sendPOSTRequest('/percentage', { number });
 };
 
 const convertIntoOppositeNum = () => {
-  let number = +document.querySelector('#resultDisplay').innerText;
+  const number = +document.querySelector('#resultDisplay').innerText;
   sendPOSTRequest('/convertIntoOppositeNum', { number });
 };

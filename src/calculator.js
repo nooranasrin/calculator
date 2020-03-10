@@ -44,7 +44,7 @@ class Calculator {
     const result = operation(+this.firstNumber, +this.secondNumber);
     this.operator = null;
     this.secondNumber = '';
-    this.firstNumber = `${result}`;
+    this.firstNumber = '';
     return { result };
   }
 }
